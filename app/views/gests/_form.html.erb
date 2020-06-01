@@ -1,0 +1,42 @@
+<%= form_with(model: gest, local: true) do |form| %>
+  <% if gest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gest.errors.count, "error") %> prohibited this gest from being saved:</h2>
+
+      <ul>
+        <% gest.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label '名前' %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label '郵便番号' %><br>
+    <%= form.text_field :postcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label '住所' %><br>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label '電話番号' %><br>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label '性別' %><br>
+    <%= form.text_field :gender %>
+  </div>
+
+  <%= button_tag :type => "submit", :class =>"btn btn-info" do %>
+    保存する
+  <% end %>
+<% end %>

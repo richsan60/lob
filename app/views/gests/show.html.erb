@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前：</strong>
+  <%= @gest.name %>
+</p>
+
+<p>
+  <strong>郵便番号：</strong>
+  <%= @gest.postcode %>
+</p>
+
+<p>
+  <strong>住所：</strong>
+  <%= @gest.address %>
+</p>
+
+<p>
+  <strong>電話番号：</strong>
+  <%= @gest.phone_number %>
+</p>
+
+<p>
+  <strong>性別：</strong>
+  <%= @gest.gender %>
+</p>
+
+<%= link_to '更新', edit_gest_path(@gest) %> |
+<%= link_to '戻る', gests_path %>

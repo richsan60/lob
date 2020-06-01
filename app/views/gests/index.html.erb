@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<script src="https://kit.fontawesome.com/19a3071250.js" crossorigin="anonymous"></script>
+
+<h1>ゲスト一覧</h1>
+
+<%= link_to '新規登録', new_gest_path,   {class: "btn btn-primary", role:"submit" } %>
+<br>
+
+<table class= "table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th>名前</th>
+      <th>郵便番号</th>
+      <th>住所</th>
+      <th>電話番号</th>
+      <th>性別</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gests.each do |gest| %>
+      <tr>
+        <td><%= gest.name %></td>
+        <td><%= gest.postcode %></td>
+        <td><%= gest.address %></td>
+        <td><%= gest.phone_number %></td>
+        <td><%= gest.gender %></td>
+        <td><%= link_to gest do %><i class="far fa-frown-open"></i> 表示<% end %></td>
+        <td><%= link_to edit_gest_path(gest) do %><i class="far fa-kiss"></i> 更新<% end %></td>
+        <td><%= link_to gest, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="far fa-dizzy"></i> 削除<% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
